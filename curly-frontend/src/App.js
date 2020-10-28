@@ -79,22 +79,22 @@ class  App extends React.Component {
          <div className="col s6">
                  <form onSubmit={(e)=>this.submit(e,this.state.id)}>
                  <div className="input-field col s12">
-                    <i className="material-icons prefix">person</i>
+                    <i className="material-icons prefix">apps</i>
                     <input value={this.state.name} onChange={(e)=>this.setState({name:e.target.value})} type="text" id="autocomplete-input" className="autocomplete"  />
                     <label htmlFor="autocomplete-input">Enter Name</label>
                   </div>
                   <div className="input-field col s12">
-                    <i className="material-icons prefix">mail</i>
-                    <input value={this.state.email} onChange={(e)=>this.setState({email:e.target.value})} type="email" id="autocomplete-input" className="autocomplete"  />
-                    <label htmlFor="autocomplete-input">Enter Email</label>
+                    <i className="material-icons prefix">cloud_queue</i>
+                    <input value={this.state.ip} onChange={(e)=>this.setState({ip:e.target.value})} type="text" id="autocomplete-input" className="autocomplete"  />
+                    <label htmlFor="autocomplete-input">Enter IP</label>
                   </div>
                   <div className="input-field col s12">
-                    <i className="material-icons prefix">vpn_key</i>
-                    <input value={this.state.password} onChange={(e)=>this.setState({password:e.target.value})} type="password" id="autocomplete-input" className="autocomplete"  />
-                    <label htmlFor="autocomplete-input">Enter Password</label>
+                    <i className="material-icons prefix">dns</i>
+                    <input value={this.state.dns} onChange={(e)=>this.setState({dns:e.target.value})} type="text" id="autocomplete-input" className="autocomplete"  />
+                    <label htmlFor="autocomplete-input">Enter DNS</label>
                   </div>
                    <div className="input-field col s12">
-                     <i className="material-icons prefix">signal_cellular_4_bar</i>
+                     <i className="material-icons prefix">directions</i>
                      <input value={this.state.redirect} onChange={(e)=>this.setState({redirect:e.target.value})} type="text" id="autocomplete-input" className="autocomplete"  />
                      <label htmlFor="autocomplete-input">Enter Redirect URL</label>
                    </div>
