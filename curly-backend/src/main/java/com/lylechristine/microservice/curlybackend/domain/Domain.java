@@ -16,7 +16,6 @@ public class Domain {
     private String id;
 
     private String name;
-    private String dns;
     private String ip;
     private String redirect;
     private String host;

@@ -7,7 +7,6 @@ class  App extends React.Component {
       domains:[],
       id:0,
       name:'',
-      dns:'',
       ip:'',
       redirect:'',
       host:''
@@ -20,7 +19,6 @@ class  App extends React.Component {
         domains:res.data,
         id:0,
         name:'',
-        dns:'',
         ip:'',
         redirect:'',
         host:''
@@ -33,7 +31,6 @@ class  App extends React.Component {
     if(id===0){
       axios.post("http://localhost:8080/api/",{
         name:this.state.name,
-        dns:this.state.dns,
         ip:this.state.ip,
         redirect:this.state.redirect,
         host:this.state.host
@@ -44,7 +41,6 @@ class  App extends React.Component {
       axios.put("http://localhost:8080/api/",{
         id:id,
         name:this.state.name,
-        dns:this.state.dns,
         ip:this.state.ip,
         redirect:this.state.redirect,
         host:this.state.host
@@ -65,7 +61,6 @@ class  App extends React.Component {
       this.setState({
         id:res.data.id,
         name:res.data.name,
-        dns:res.data.dns,
         ip:res.data.ip,
         redirect:res.data.redirect,
         host:res.data.host
@@ -88,11 +83,6 @@ class  App extends React.Component {
                     <input value={this.state.ip} onChange={(e)=>this.setState({ip:e.target.value})} type="text" id="autocomplete-input" className="autocomplete"  />
                     <label htmlFor="autocomplete-input">Enter IP</label>
                   </div>
-                  <div className="input-field col s12">
-                    <i className="material-icons prefix">dns</i>
-                    <input value={this.state.dns} onChange={(e)=>this.setState({dns:e.target.value})} type="text" id="autocomplete-input" className="autocomplete"  />
-                    <label htmlFor="autocomplete-input">Enter DNS</label>
-                  </div>
                    <div className="input-field col s12">
                      <i className="material-icons prefix">directions</i>
                      <input value={this.state.redirect} onChange={(e)=>this.setState({redirect:e.target.value})} type="text" id="autocomplete-input" className="autocomplete"  />
@@ -113,7 +103,6 @@ class  App extends React.Component {
         <thead>
           <tr>
               <th>Name</th>
-              <th>DNS</th>
               <th>IP</th>
               <th>Redirect</th>
               <th>Host</th>
@@ -127,7 +116,6 @@ class  App extends React.Component {
               this.state.domains.map(domain =>
                   <tr key={domain.id}>
                       <td>{domain.name}</td>
-                      <td>{domain.dns}</td>
                       <td>{domain.ip}</td>
                       <td>{domain.redirect}</td>
                       <td>{domain.host}</td>

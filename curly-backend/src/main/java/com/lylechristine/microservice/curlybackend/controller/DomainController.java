@@ -30,7 +30,6 @@ public class DomainController {
     public Domain PutMapping(@RequestBody Domain newUser) {
         Domain oldUser = domainRepository.findById(newUser.getId()).orElse(null);
         oldUser.setName(newUser.getName());
-        oldUser.setDns(newUser.getDns());
         oldUser.setIp(newUser.getIp());
         oldUser.setRedirect(newUser.getRedirect());
         oldUser.setHost(newUser.getHost());
