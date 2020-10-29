@@ -1,0 +1,32 @@
+# LOGGING
+logging:
+  file:
+    name: /home/lylio/Documents/logs/curly.log
+
+# BANNER
+spring.banner.location: classpath:banner.txt
+
+# DATABASE
+spring:
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/domain-database
+
+# ENDPOINT MANAGEMENT
+management:
+  endpoint:
+    info:
+      enabled: true
+    metrics:
+      enabled: true
+    prometheus:
+      enabled: true
+    health:
+      show-details: always
+      enabled: true
+    shutdown:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: "*"

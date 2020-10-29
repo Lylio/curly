@@ -1,0 +1,9 @@
+# IDENTITY
+spring:
+  application:
+    name: curly-backend
+
+  # SPRING CLOUD CONFIG SERVER URI
+  cloud:
+    config:
+      uri: https://chinook-services.herokuapp.com
