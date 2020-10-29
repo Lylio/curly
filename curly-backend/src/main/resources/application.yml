@@ -10,7 +10,7 @@ spring.banner.location: classpath:banner.txt
 spring:
   data:
     mongodb:
-      uri: mongodb://localhost:27017/domain-database
+      uri: mongodb://127.0.0.1:27017/domain-database
 
 # ENDPOINT MANAGEMENT
 management:
