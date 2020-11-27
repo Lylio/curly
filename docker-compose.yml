@@ -2,12 +2,7 @@ version: '3.7'
 
 # Define services
 services:
-  # Database Service (MongoDB)
-  mongodb_container:
-    image: mongo:latest
-    container_name: "mongodb"
-    ports:
-      - 27018:27017
+
 
   # App backend service
   app-server:
@@ -34,7 +29,7 @@ services:
       args:
         REACT_APP_API_BASE_URL: http://127.0.0.1:8080/api
     ports:
-      - "9099:80" # Forward the exposed port 80 on the container to port 9090 on the host machine
+      - "9099:80" # Forward the exposed port 80 on the container to port 9099 on the host machine
     restart: always
     depends_on:
       - app-server
@@ -42,7 +37,18 @@ services:
       - frontend
 
 
-
+  # Database Service (MongoDB)
+  mongodb_container:
+    image: mongo:latest
+    container_name: "mongodb"
+    ports:
+      - 27018:27017
+    environment:
+      - MONGO_INITDB_DATABASE=domain-database
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=admin
+    networks:
+      - backend
 
 
 # Networks to be created to facilitate communication between containers
