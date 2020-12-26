@@ -8,11 +8,20 @@
 ### Description
 An app to track URL, IP and DNS details.
 
-#### Docker Launch
-1. Coming Soon
+#### Launch Backend
+1. Make sure MongoDB is running
+2. `cd curly-backend`
+3. `mvn spring-boot:run`
 
-#### Maven / NPM Launch
-1. Coming Soon
+#### Launch Frontend
+1. `cd curly-frontend`
+2. `npm install`
+3. `npm start`
+4. Navigate to http://localhost:3000
 
 #### MongoDB
-1. Coming Soon
+1. `mongo` (open MongoDB shell)
+2. `show dbs`
+3. `use domain-database`
+4. `show collections`
+5. `db.domain.find()`
